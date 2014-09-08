@@ -1,4 +1,8 @@
 @import "bootstrap";
+
+
+
+
 $lightGray: #999; /* universal */
 html {
 	overflow-y: scroll;
@@ -161,4 +165,21 @@ input {
 .field_with_errors {
   @extend .control-group;
   @extend .error;
+}
+
+/* User Index */
+.users {
+	list-style: none;
+	margin: 0;
+
+li {
+	overflow: auto;
+	padding: 10px 0;
+	padding-left: 15px;
+	border-top: 1px solid $grayLighter;
+	&:last-child {
+		border-bottom:  1px solid $grayLighter;
+	}
+}
+
 }
