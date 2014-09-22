@@ -17,6 +17,8 @@ describe User do
   it { should respond_to(:authenticate) }
   it { should respond_to(:remeber_token) }
   it { should respond_to(:admin)}
+  it { should respond_to(:microposts) }
+  it { should respond_to(:feeds) }
 
   it { should be_valid }
   it { should_not be_admin}
@@ -129,6 +131,17 @@ describe User do
     before { @user.save }
     its(:remember_token) { should_not be_blank }
   	end
+
+  describe "microposts association" do
+    before { @user.save }
+    let!(:older_micropost) do
+      FactoryGirl.create8.micropost, user: @user, created_at: 1.day_ago)
+    end
+    let!(:newer_microposts) do
+      FactoryGirl.create.micropost, user: @user, created_at: 1.hour_ago)
+     end
+    end
+  end
 end
 end
 end
