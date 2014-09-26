@@ -5,6 +5,9 @@
 				<%= render 'shared/user_info' %>
 			</section>
 			<section>
+				<%= render 'shared/stats' %>
+			</section>
+			<section>
 				<%= render 'shared/micropost_form' %>
 			</section>
 		</aside>
@@ -19,12 +22,10 @@
 <% provide(:title, '') %>
 <div class="center hero-unit">
 
-<h1> Welcome to Jans App</h1>
+<h1> Welcome to Fikker</h1>
 
 	<h2>
-    This is the home page for the
-    <a href="http://railstutorial.org/">Ruby on Rails Tutorial</a>
-    sample application.
+    Connect with your friends — and other fascinating people. Get in-the-moment updates on the things that interest you. And watch events unfold, in real time, from every angle.
   	</h2>
 
   	<%= link_to "Sign up now", signup_path, class: "btn btn-large btn-primary" %>
