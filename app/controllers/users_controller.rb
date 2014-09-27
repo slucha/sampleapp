@@ -4,7 +4,21 @@ class UsersController < ApplicationController
 	before_action :admin_user, only: [:destroy]
 
 	def index
-		@users = User.paginate(page: params[:page])
+		
+		
+		if params[:search]
+			@users = User.search(params[:search]).order("created_at DESC").paginate(:per_page => 30, :page => params[:page])
+      		#@users = User.search(params[:search]).order("created_at DESC")
+    	else
+    		#@users = User.order("created_at DESC")
+      		@users = User.paginate(page: params[:page])
+      		
+      	end
+	end
+
+	def search
+	  q = params[:user][:name]
+	  @users = User.find(:all, :conditions => ["name LIKE %?%",q])
 	end
 
 	def show

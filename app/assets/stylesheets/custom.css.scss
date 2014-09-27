@@ -131,6 +131,29 @@ $grayMediumLight: #eaeaea;
   }
 }
 
+.search {
+	overflow: auto;
+
+	a {
+	float: right;
+	
+	}
+	
+}
+
+.search-index {
+	overflow: auto;
+
+	a {
+	display: block;
+	float: right;
+    padding: 0 10px;
+    color: gray;
+	}
+	
+}
+
+
 .user_avatars {
   overflow: auto;
   margin-top: 10px;
